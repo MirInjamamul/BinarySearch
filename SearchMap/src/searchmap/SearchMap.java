@@ -60,11 +60,11 @@ public class SearchMap {
     }
     
     // data search function
-    public void get(int position , int student_id){
+    public void get(int student_id){
         List<student> list = ht.get(student_id);
         
-        System.out.println("Student Name : "+list.get(position).student_name);
-        System.out.println("Student Age : "+list.get(position).student_age);
+        System.out.println("Student Name : "+list.get(0).student_name);
+        System.out.println("Student Age : "+list.get(0).student_age);
     }
     
     public int binarySearch(int arr[], int low, int high, int key){
@@ -138,7 +138,7 @@ public class SearchMap {
                     int position = sm.binarySearch(arr, 0, arrLength-1, searched_id);
                     
                     if(position != -1){
-                        sm.get(position, searched_id);
+                        sm.get(searched_id);
                     }else{
                         System.err.println("Data Not Found");
                     }
